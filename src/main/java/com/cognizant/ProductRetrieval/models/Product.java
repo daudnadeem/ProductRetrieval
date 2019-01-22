@@ -3,6 +3,7 @@ package com.cognizant.ProductRetrieval.models;
 import java.util.ArrayList;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Product {
@@ -11,9 +12,19 @@ public class Product {
 		
 	}
 	
+	public Product(String productId, String title) {
+		super();
+		this.productId = productId;
+		this.title = title;
+	}
+	
+	 @JsonProperty("productId")
 	private String productId;
+	 
+	 @JsonProperty("title")
 	private String title;
-	ArrayList<colorSwatches> arrayColorSwatches = new ArrayList<colorSwatches>();
+	 
+	ArrayList<ColorSwatches> arrayColorSwatches = new ArrayList<ColorSwatches>();
 	private String nowPrice;
 	private String priceLabel;
 	public String getProductId() {
@@ -28,10 +39,10 @@ public class Product {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public ArrayList<colorSwatches> getStr() {
+	public ArrayList<ColorSwatches> getStr() {
 		return arrayColorSwatches;
 	}
-	public void setStr(ArrayList<colorSwatches> str) {
+	public void setStr(ArrayList<ColorSwatches> str) {
 		this.arrayColorSwatches = str;
 	}
 	public String getNowPrice() {
@@ -51,10 +62,10 @@ public class Product {
     public String toString() {
         return "Product{" +
                 "productId='" + productId + '\'' +
-                ", title=" + title +  '\'' +
-                "colorSwatches='" + colorSwatches.class + '\'' +
-                "nowPrice='" + nowPrice + '\'' +
-                "priceLabel='" + priceLabel +
+                ", title=" + title +
+//                "colorSwatches='" + colorSwatches.class + '\'' +
+//                "nowPrice='" + nowPrice + '\'' +
+//                "priceLabel='" + priceLabel +
                 '}';
     }
 	

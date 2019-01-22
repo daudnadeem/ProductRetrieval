@@ -1,11 +1,11 @@
 package com.cognizant.ProductRetrieval.models;
 
-public class colorSwatches {
+public class ColorSwatches {
 	private String color;
 	private String rgbColor;
 	private String skuid;
 	
-	private colorSwatches(String color, String rgbColor, String skuid) {
+	private ColorSwatches(String color, String rgbColor, String skuid) {
 		this.color = color;
 		this.rgbColor = rgbColor;
 		this.skuid = skuid;
